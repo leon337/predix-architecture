@@ -4,10 +4,10 @@
 **Contrato aplicado:** `AUDIT-CONTRACT-001`  
 **Versão do contrato:** `1.1.0`  
 **Quality Gate:** `QUALITY-GATE-001`  
-**Versão do relatório:** `1.1.0`  
-**Data e hora de início:** `<AAAA-MM-DD HH:MM TZ>`  
-**Data e hora de conclusão:** `<AAAA-MM-DD HH:MM TZ>`  
-**Snapshot da fonte:** `<AAAA-MM-DD HH:MM TZ | SHA | ID | OUTRA REFERÊNCIA>`  
+**Versão do relatório:** `1.1.1`  
+**Início:** `<AAAA-MM-DD HH:MM TZ>`  
+**Conclusão:** `<AAAA-MM-DD HH:MM TZ>`  
+**Snapshot da fonte:** `<DATA/HORA | SHA | ID | OUTRA REFERÊNCIA>`  
 **Auditor:** `<AGENTE/CHAT>`  
 **Modo:** Somente leitura nas fontes auditadas  
 **Status:** Em elaboração | Em revisão | Em revisão crítica | Remediado | Pronto para consolidação  
@@ -15,13 +15,12 @@
 
 ## 1. Resumo executivo
 
-Descreva de forma objetiva:
+Registrar:
 
 - quantidade de recursos encontrados;
-- nível de cobertura confirmado;
-- principais riscos;
-- principais inconsistências;
-- principais oportunidades de consolidação ou reutilização;
+- cobertura confirmada;
+- riscos e inconsistências principais;
+- oportunidades de consolidação ou reutilização;
 - limitações relevantes;
 - veredito final.
 
@@ -39,45 +38,47 @@ Descreva de forma objetiva:
 
 <DESCRIÇÃO>
 
-### Consultas, filtros ou mecanismos utilizados
+### Consultas, filtros ou ações de leitura
 
-| Identificador | Consulta, filtro ou ação de leitura | Objetivo | Resultado resumido |
+| ID | Consulta, filtro ou ação | Objetivo | Resultado resumido |
 |---|---|---|---|
 | QRY-001 |  |  |  |
 
 ## 3. Cobertura e paginação
 
-**Cobertura declarada:** COMPLETA_CONFIRMADA | PARCIAL_DECLARADA | AMOSTRAL | INDETERMINADA
+**Cobertura:** COMPLETA_CONFIRMADA | PARCIAL_DECLARADA | AMOSTRAL | INDETERMINADA
 
-| Recurso | Total informado pela fonte | Total percorrido | Páginas/lotes | Paginação encerrada? | Observação |
+| Recurso | Total informado | Total percorrido | Páginas/lotes | Paginação encerrada? | Observação |
 |---|---:|---:|---:|---|---|
 |  |  |  |  | Sim |  |
 
-Nunca declarar cobertura completa sem confirmar o encerramento da paginação ou do mecanismo equivalente.
+Nunca declarar cobertura completa sem confirmar o encerramento da paginação ou mecanismo equivalente.
 
 ## 4. Limitações e acessos ausentes
 
-| Item | Limitação | Impacto na auditoria | Ação necessária | Estado |
+| Item | Limitação | Impacto | Ação necessária | Estado |
 |---|---|---|---|---|
 | 1 |  |  |  | ABERTO |
 
-## 5. Inventário dos recursos encontrados
+## 5. Inventário dos recursos
 
-| Identificador estável | Nome | Tipo | Estado observado | Projeto relacionado | Última atividade observada | Evidência |
+| ID estável | Nome | Tipo | Estado observado | Projeto relacionado | Última atividade | Evidência |
 |---|---|---|---|---|---|---|
 |  |  |  |  |  |  |  |
 
 ## 6. Relações entre projetos e plataformas
 
+Estados permitidos: `CONFIRMADA`, `INFERIDA` ou `DESCONHECIDA`.
+
 | Origem | Destino | Tipo de relação | Evidência | Confiança | Estado da relação |
 |---|---|---|---|---|---|
-|  |  |  |  |  | CONFIRMADA | INFERIDA | DESCONHECIDA |
+|  |  |  |  |  | CONFIRMADA |
 
 ## 7. Achados críticos e altos
 
 ### <AUD-FONTE-AAAA-NNN> — <TÍTULO>
 
-- **Execução de auditoria:**
+- **Execução:**
 - **Fonte:**
 - **Projeto ou recurso:**
 - **Categoria:**
@@ -91,7 +92,7 @@ Nunca declarar cobertura completa sem confirmar o encerramento da paginação ou
 - **Dependências:**
 - **Estado:** ABERTO
 - **Responsável sugerido:**
-- **Data e hora da observação:**
+- **Observado em:**
 - **Última verificação:**
 - **Achados relacionados:**
 
@@ -99,7 +100,7 @@ Nunca declarar cobertura completa sem confirmar o encerramento da paginação ou
 
 ### <AUD-FONTE-AAAA-NNN> — <TÍTULO>
 
-- **Execução de auditoria:**
+- **Execução:**
 - **Fonte:**
 - **Projeto ou recurso:**
 - **Categoria:**
@@ -113,24 +114,19 @@ Nunca declarar cobertura completa sem confirmar o encerramento da paginação ou
 - **Dependências:**
 - **Estado:** ABERTO
 - **Responsável sugerido:**
-- **Data e hora da observação:**
+- **Observado em:**
 - **Última verificação:**
 - **Achados relacionados:**
 
-## 9. Recursos órfãos ou sem associação identificada
+## 9. Recursos órfãos
 
-| Recurso | Fonte | Situação | Evidência | Confiança | Próxima verificação sugerida |
+| Recurso | Fonte | Situação | Evidência | Confiança | Próxima verificação |
 |---|---|---|---|---|---|
 |  |  |  |  |  |  |
 
 ## 10. Candidatos a engines ou componentes reutilizáveis
 
-Classificações permitidas:
-
-- `INTERNO`;
-- `CANDIDATO_A_ENGINE`;
-- `PRONTO_PARA_EXTRAÇÃO`;
-- `ENGINE_EXTRAÍDO`.
+Classificações permitidas: `INTERNO`, `CANDIDATO_A_ENGINE`, `PRONTO_PARA_EXTRAÇÃO`, `ENGINE_EXTRAÍDO`.
 
 | Componente | Local atual | Possíveis consumidores | Maturidade | Classificação | Evidência |
 |---|---|---|---|---|---|
@@ -144,23 +140,19 @@ Classificações permitidas:
 
 ## 12. Informações desconhecidas
 
-| Pergunta | Classificação | Por que não foi possível confirmar | Fonte necessária | Impacto da incerteza |
+Classificações permitidas: `NÃO_ENCONTRADO_NO_ESCOPO_CONSULTADO`, `CONFIRMADO_INEXISTENTE`, `NÃO_VERIFICÁVEL`.
+
+| Pergunta | Classificação | Motivo da incerteza | Fonte necessária | Impacto |
 |---|---|---|---|---|
 |  | NÃO_VERIFICÁVEL |  |  |  |
 
-Classificações permitidas:
+## 13. Evidências
 
-- `NÃO_ENCONTRADO_NO_ESCOPO_CONSULTADO`;
-- `CONFIRMADO_INEXISTENTE`;
-- `NÃO_VERIFICÁVEL`.
-
-## 13. Anexo de evidências
-
-| Evidência | Tipo | Local, ID, SHA ou referência | Coletada em | Consulta associada | Limitações | Achados relacionados |
+| Evidência | Tipo | Local, ID, SHA ou referência | Coletada em | Consulta | Limitações | Achados relacionados |
 |---|---|---|---|---|---|---|
 | EVD-FONTE-AAAA-001 |  |  |  | QRY-001 |  |  |
 
-Não registrar valores de tokens, chaves, senhas, strings de conexão ou variáveis sensíveis.
+Não registrar tokens, chaves, senhas, strings de conexão ou valores de variáveis sensíveis.
 
 ## 14. Correlação e duplicidades
 
@@ -168,9 +160,9 @@ Não registrar valores de tokens, chaves, senhas, strings de conexão ou variáv
 |---|---|---|---|---|
 |  |  | DUPLICADO |  | Não contabilizar duas vezes |
 
-## 15. Falhas e interrupções da auditoria
+## 15. Falhas e interrupções
 
-| Data e hora | Falha | Tentativas | Impacto | Estado | Próxima ação necessária |
+| Data e hora | Falha | Tentativas | Impacto | Estado | Próxima ação |
 |---|---|---:|---|---|---|
 |  |  |  |  | RESOLVIDA |  |
 
@@ -183,19 +175,15 @@ Não registrar valores de tokens, chaves, senhas, strings de conexão ou variáv
 
 ## 17. Revisão
 
-### Verificações executadas
-
 - [ ] Escopo declarado.
 - [ ] Cobertura e paginação declaradas.
 - [ ] Limitações registradas.
-- [ ] Fatos, inferências, hipóteses, desconhecidos e recomendações separados.
-- [ ] Evidências possuem referências e data de coleta.
-- [ ] Segredos e dados sensíveis não foram expostos.
-- [ ] Inventário estruturado está coerente com o relatório.
-- [ ] IDs de achados e evidências são únicos.
+- [ ] Tipos de afirmação separados.
+- [ ] Evidências possuem referência e data.
+- [ ] Segredos não foram expostos.
+- [ ] Inventário estruturado está coerente.
+- [ ] IDs são únicos.
 - [ ] Nenhuma alteração operacional foi executada.
-
-### Achados da revisão
 
 | ID | Severidade | Descrição | Estado |
 |---|---|---|---|
@@ -203,7 +191,7 @@ Não registrar valores de tokens, chaves, senhas, strings de conexão ou variáv
 
 ## 18. Revisão crítica
 
-A revisão crítica deve desafiar as conclusões e procurar omissões, falsos positivos, falsos negativos, cobertura incompleta, inferências apresentadas como fatos e recomendações sem evidência.
+Questionar omissões, falsos positivos, falsos negativos, cobertura incompleta, inferências tratadas como fatos e recomendações sem evidência.
 
 | ID | Severidade | Questionamento crítico | Evidência | Estado |
 |---|---|---|---|---|
@@ -211,7 +199,7 @@ A revisão crítica deve desafiar as conclusões e procurar omissões, falsos po
 
 ## 19. Remediação e reverificação
 
-| Achado de origem | Remediação executada | Artefato afetado | Evidência da correção | Resultado da reverificação |
+| Achado de origem | Remediação | Artefato afetado | Evidência da correção | Reverificação |
 |---|---|---|---|---|
 |  |  |  |  | PASS |
 
